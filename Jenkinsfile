@@ -5,6 +5,7 @@ pipeline{
       steps{
         echo 'This is a test pipeline under main branch'
 	  echo 'added by local git to check pipeline triger after adding webhook'
+	  echo 'bla bla'
       }
     }
   }
