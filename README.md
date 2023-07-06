@@ -1,81 +1,46 @@
 # Multi Branch EndToEnd Pipeline
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+
+This project focuses on automating the deployment process for a web application using a CloudOps pipeline. The pipeline is built with Jenkins and Docker, enabling efficient code delivery and deployment to a production server.<br />
+
+* Code Submission: Developers push their code to the central repository.
+* Jenkins Slave Node: The code is cloned into a Jenkins slave node for further processing.
+* Maven Build: The Jenkins master, running on the master server, triggers a Maven build to create a JAR file for the web application.
+* Docker Image Creation: A Docker image is built using the Dockerfile, incorporating the JAR file and other dependencies.
+* Docker Hub Push: The Docker image is pushed to Docker Hub, serving as a central repository for Docker images.
+* Production Server Deployment: The Jenkins master node establishes an SSH connection with the production server.
+* Docker Container Setup: The pipeline pulls the Docker image from Docker Hub and runs a Docker container on the production server.
+
+  
 ![alt text](https://github.com/PotnuruKumarSunil/multi-branch/blob/dev/EndtoEndPipeline.png)
 
 
-New for docker containerization ??
-No worries, your management system is here.. <br />
-Here's why:
-* Many containers are to be launched while testing a web application for which a GUI can be more user friendly.
-* Newbies in devops always feel nervous towards containers, which helps them chill.
-
-This Web app helps you run customized docker containers from your browser.<br />
-Container management system is a three tier web app where it has a backend server, frontend for the user interface and docker services.<br />
-
-
-### Built With
-* docker
-* node
-* html,css
-* javascript
+## Built With
+* Jenkins
+* Docker
+* AWS Cloud
+* Httpd Webserver
+* Java
+* Maven Build tool
 
 ## Prerequisites
-* Make sure you have docker installed in your server.<br />
-To install docker in RHEL/CentOS
+* Jenkins: Install Jenkins on a master node and configure it to use slave nodes for code execution.<br />
+* Jenkins Slave and Maven: Install and Set up Jenkins slave as well as Maven on the slave node to build the web application.<br />
+* Docker: Install Docker on the Jenkins slave node and on the production server for image creation and deployment.<br />
 
-```bash
-$ yum install docker-ce
-```
-* Also make sure you have express installed.
-```bash
-$ yum install express
-```
-* Start your docker services
-```bash
-$ sudo systemctl start docker
-$ sudo systemctl enable docker
-```
-* Also, Make sure you have node is installed in your server.<br />
-To install node js in RHEL/CentOS
+## Configuration and Usage
+* Clone this repository's Jenkinsfile to your java development environment.
+* Make sure you start your jenkins services on the master node and also establish the connection between master and slave and also between master and production environment.
+* Make all the required changes, like the IP of the production server and stuff.
+* You can now push your code to the repository.
 
-```bash
-$ yum install node
-```
-* To check the version of node installed.
-```bash
-$ node --version
-```
-_You can even documentation for node installation in RHEL/CentOS._
-## Installation and Usage
-
-1. Clone the repo
-   ```sh
-   $ git clone https://github.com/PotnuruKumarSunil/container_management_system.git
-   ```
-2. _Type IP address of system in which docker and backend will be running in rundocker file._
-   ```js
-    ip = 1.2.3.4 //in rundocker.html file
-   ```
-  
-3. Start the backend server.<br />
-  _Make sure your docker daeman in running already._
-   ```js
-   $ nodemon server.js
-   ```
-4. Jump on to browser for webapp
-   ```js
-    http://localhost:3000/rundocker.html
-   ```
-
-## Future Scope
-_Whole setup can also be launched in the cloud resources, which would be one of the best infrastructure manager for the testing as well as launching containers for real lif servers.<br />
-As cloud itself is kinda virtualization, running containers in cloud would always be the best way in my view._<br />
-The same technology can also be used for k8's. That would help developers and testers with much better options for backups, storages and maintainance.
+## Conclusion
+By implementing this CloudOps pipeline, you can automate the deployment process for your web application, ensuring faster and consistent delivery to the production server. Feel free to customize the pipeline according to your specific requirements and continue enhancing it as your project evolves.
 
 ## Contact
-Potnuru Kumar Sunil - sunilkumar26666@gmail.com
+Potnuru Kumar Sunil - sunilpotnuru369@gmail.com
 
-Project Link: [https://github.com/PotnuruKumarSunil/container_management_system](https://github.com/PotnuruKumarSunil/container_management_system.git)
+Project Link: [https://github.com/PotnuruKumarSunil/end-to-end-pipeline](https://github.com/PotnuruKumarSunil/multi-branch.git)
 
 
