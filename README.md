@@ -1,7 +1,8 @@
-# Container Management System
+# Multi Branch EndToEnd Pipeline
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-![alt text](https://github.com/PotnuruKumarSunil/container_management_system/homeScreen.png)
+![alt text](https://github.com/PotnuruKumarSunil/multi-branch/blob/dev/EndtoEndPipeline.png)
+
 
 New for docker containerization ??
 No worries, your management system is here.. <br />
